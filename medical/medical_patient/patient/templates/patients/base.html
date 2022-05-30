@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'patients/css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'patients/css/main.css'%}">
+</head>
+<body>
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{%url 'menu'%}">
+      <img src="{% static 'patients/icons/pills_medical_10733.png'%}" alt="" width="50" height="50" class="d-inline-block align-text-top">
+      Главная
+    </a>
+  </div>
+    {% block page%}
+    {% endblock %}
+</nav>
+</body>
+</html>

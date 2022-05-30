@@ -1,0 +1,49 @@
+{%extends 'patients/base.html'%}
+
+{% block page%}
+<form class="row g-4" method="post">
+    {% csrf_token %}
+  <div class="col-md-4">
+    <label  class="form-label"></label>
+    <input type="text" class="form-control" id="inputEmail4" placeholder="Фамилия">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label"></label>
+    <input type="text" class="form-control" id="inputPassword4" placeholder="Имя">
+  </div>
+  <div class="col-md-4">
+    <label  class="form-label"></label>
+    <input type="text" class="form-control" id="inputPassword4" placeholder="Отчество">
+  </div>
+    <div class="col-md-4">
+    <label  class="form-label">Дата рождения</label>
+    <input type="date" class="form-control" id="inputPassword4" placeholder="Дата рождения">
+  </div>
+  <div class="knopka">
+    <label class="visually-hidden" ></label>
+    <select class="form-select" id="inlineFormSelectPref">
+      <option selected>Пол</option>
+      <option value="1">Мужской</option>
+      <option value="2">Женский</option>
+    </select>
+  </div>
+  <div class="col-auto">
+    <label for="inputCity" class="form-label">Город</label>
+    <input type="text" class="form-control" id="inputCity">
+  </div>
+  <div class="col-8">
+    <label  class="form-label">Адрес</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Улица, дом, квартира">
+  </div>
+  {% block content%}
+  <div class="mb-2">
+    <label for="exampleFormControlTextarea1" class="form-label">Диагноз</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+<div class="col-12">
+    <button type="submit" class="btn btn-primary">Создать</button>
+</div>
+  {% endblock %}
+</form>
+
+{% endblock %}
